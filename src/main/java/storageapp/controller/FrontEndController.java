@@ -14,22 +14,16 @@ public class FrontEndController {
         this.photoService = photoService;
     }
 
-    @GetMapping("/admin/gallery")
-    public String adminGallery(ModelMap map) {
-        map.put("files", photoService.getPhotos());
-        return "gallery_admin";
-    }
-
-
     @GetMapping("/")
     public String login() {
         return "login";
     }
 
-//    @GetMapping("/admin")
-//    public String admin() {
-//        return "admin";
-//    }
+    @GetMapping("/admin/gallery")
+    public String adminGallery(ModelMap map) {
+        map.put("files", photoService.getPhotos());
+        return "gallery_admin";
+    }
 
     @GetMapping("/gallery")
     public String userGallery(ModelMap map) {
