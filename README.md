@@ -1,4 +1,6 @@
 # PhotoStorageWeb
+https://photostorage667.herokuapp.com (on Heroku there is version without Spring Security)
+
 Web Application for adding, storage, downloading, view and deleting photos (png, jpeg, jpg), max 5 mb
 Spring Security, 2 modes of access: admin and user, different home pages and levels of access, admin can delete photos as well. Different access for API 
 (pattern dto)
