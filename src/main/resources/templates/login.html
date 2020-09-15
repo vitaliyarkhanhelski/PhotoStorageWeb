@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Login Form</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="align">
+
+<div class="grid">
+
+    <form th:action="@{/login}" method="post" class="form login">
+        <h1 style="color: #1a3454; text-align: center">Log In</h1>
+
+        <div class="form__field">
+            <label for="login__username">
+                <svg class="icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+                </svg>
+                <span class="hidden">Username</span></label>
+            <input id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+        </div>
+
+        <div class="form__field">
+            <label for="login__password">
+                <svg class="icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
+                </svg>
+                <span class="hidden">Password</span></label>
+            <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+        </div>
+
+        <div class="text--center" th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div class="text--center" th:if="${param.logout}">
+            You have been logged out.
+        </div>
+
+        <div class="form__field">
+            <input type="submit" value="Sign In">
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

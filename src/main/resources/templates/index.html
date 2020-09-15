@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Storage</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<noscript>
+    <h2>Sorry! Your browser doesn't support Javascript</h2>
+</noscript>
+<div class="upload-container">
+
+    <div class="upload-header">
+        <h1>Photo Storage Web Service</h1>
+    </div>
+
+    <div class="upload-content">
+
+        <div class="single-upload2">
+            <h3><a href="/api/v1/photos/">Photo Storage API</a></h3>
+        </div>
+
+        <div class="single-upload2">
+            <h3><a href="/gallery">Photo Storage</a></h3>
+        </div>
+
+        <div class="single-upload2">
+            <h3><a href="/swagger-ui/#/local-file-controller">Get Full Api Documentation</a></h3>
+        </div>
+
+        <div class="single-upload">
+            <h3>Upload Photo (.png, .jpeg, .jpg)</h3>
+            <form id="singleUploadForm" name="singleUploadForm">
+                <input style="padding: 6px" id="singleFileUploadInput" type="file" name="file" class="file-input"
+                       required/>
+                <button type="submit" class="primary submit-btn" style="margin-bottom: 3px">Submit</button>
+            </form>
+            <div class="upload-response">
+                <div id="singleFileUploadError"></div>
+                <div id="singleFileUploadSuccess"></div>
+            </div>
+        </div>
+
+        <div class="single-upload">
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="primary submit-btn2">Sign Out</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

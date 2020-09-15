@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Storage</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="home">
+    <div class="home2"><h1><a href="/index">Home</a></h1></div>
+</div>
+
+<div style="width: 475px; height:available">
+    <ul style="list-style-type:none;" th:if="${files != null}">
+        <li th:each="file : ${files}" class="myLi">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <a th:href="${file.downloadUri}"><img class="user" th:src="${file.downloadUri}"></a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li class="myLi2">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <div class="delete"><h1><a href="/index">Home</a></h1></div>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
